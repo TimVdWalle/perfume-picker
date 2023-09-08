@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
 {
-    public function showLogin()
+    public function showLoginForm()
     {
         return view('login');  // This assumes you have a login.blade.php in your views folder
     }
@@ -20,10 +24,26 @@ class AuthController extends Controller
     {
         $user = Socialite::driver($provider)->user();
 
-        // Perform actions like logging in the user or creating a user in your database
-        // based on the provider.
+        // Check if user already exists
+        $existingUser = User::where('email', $user->getEmail())->first();
 
-        // Here, you can also check for the 'provider' and 'provider_id' in the database.
-        // If a user with the same 'provider' and 'provider_id' exists, log them in.
-        // Otherwise, create a new user.
-    }}
+        if ($existingUser) {
+            // Log the user in
+            Auth::login($existingUser, true);
+        } else {
+            // Create a new user
+            $newUser = User::create([
+                'name'     => $user->name,
+                'email'    => $user->email,
+                'provider' => $provider,
+                'provider_id' => $user->id,
+                'password' => Hash::make(Str::random(16)), // Dummy password
+            ]);
+
+            // Log the user in
+            Auth::login($newUser, true);
+        }
+
+        return redirect('/dashboard');  // Redirect to your intended page
+    }
+}

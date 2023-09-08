@@ -56,3 +56,120 @@ AuthController (login, redirect to provider, callback from provider)
 DashboardController
 PerfumeController
 SymptomController
+
+****************************************************************************************************
+
+Give me the detailed instructions and terminal commands to setup the project.
+Installation of vite and tailwind will be done by myself.
+
+****************************************************************************************************
+
+Update the routes file to not use strings but class where possible.
+
+****************************************************************************************************
+
+Now, create a layout file that uses tailwind that can be used as master layout file for all the other blade files.
+Replace the html of the welcome page with a beautiful page that explains what this website is about. It is the page that first-time users should see and users that are nog logged in.
+Add the necessary call-to-actions to this page.
+
+First, choose a color palette for the web app. I will enter those colors in the tailwindcss configuration. No need to tell me how to that one particular thing
+
+****************************************************************************************************
+
+Update the welcome blade with more content. What content blocks do you deem appropriate to display on the homepage ?
+
+****************************************************************************************************
+
+write texts for these pages and give the blade contents:
+about us
+privacy policy
+terms and conditions
+
+****************************************************************************************************
+
+Give me instructions and updated files so that the links work.
+
+****************************************************************************************************
+
+These are the tailwind theme colors:
+colors: {
+'transparent': 'transparent',
+'mint': '#6EE7B7',
+'lightblue': '#3B82F6',
+'darkblue': '#1f48ff',
+'lightgrey': '#F3F4F6',
+'darkgrey': '#1F2937',
+'red': '#EF4444',
+},
+
+From now on, use those colors;
+Darkblue and for titles
+Mint for heading backgrounds
+Be creative and use the colors wherever you like, but be consistent: FROM NOW ON, please.
+
+****************************************************************************************************
+
+Now, in the same layout and colors as we have started: create a login page.
+On that page, the user should be able to select its way of logging in: google of apple.
+Remember that we want to use the socialite plugin.
+
+****************************************************************************************************
+
+Update the routes and methods in AuthController to make provider not hardcoded, please.
+
+****************************************************************************************************
+
+Make the route for login work. Now it gives the error:
+Method App\Http\Controllers\AuthController::showLogin does not exist
+Maybe also give it a better name?
+
+****************************************************************************************************
+
+Now fix this error:
+Method App\Http\Controllers\AuthController::showLogin does not exist
+
+****************************************************************************************************
+
+Explain to me how to setup google socialite:
+Explain how to get the app key and secret from google.
+Give the code for AuthController to handle google login
+
+****************************************************************************************************
+
+When using the socialite plugin to login using google, we get this error:
+SQLSTATE[HY000]: General error: 1364 Field 'password' doesn't have a default value
+
+****************************************************************************************************
+
+What should be on the dashboard page?
+Present some suggestions
+
+****************************************************************************************************
+
+
+****************************************************************************************************
+
+
+****************************************************************************************************
+
+
+****************************************************************************************************
+
+
+****************************************************************************************************
+
+
+****************************************************************************************************
+
+
+****************************************************************************************************
+
+
+****************************************************************************************************
+
+
+****************************************************************************************************
+
+
+****************************************************************************************************
+
